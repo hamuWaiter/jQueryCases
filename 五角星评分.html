@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>五星评分</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		ul{
+			border: 1px solid blue;
+			padding: 20px;
+			margin: 200px;
+			display: flex;
+		}
+		ul li{
+			width: 30px;
+			height: 30px;
+			background-color: transparent;
+			border: 1px solid red;
+			margin-right:20px ;
+			/* transition: background-color .5s; */
+		}
+	</style>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			
+			var idx;
+			
+			$("ul li").on("mouseenter",function() {
+				// 这一颗星及其以前的星亮
+				$(this).css("background-color","red").prevAll().css("background-color","red");
+				// 之后的星灭
+				$(this).nextAll().css("background-color","transparent");
+			}).on("mouseout",function(){
+				// 离开清除所有的星星
+				$("ul li").css("background-color","transparent");
+				
+				$("ul li").eq(idx).css("background-color","red").prevAll("li").css("background-color","red");
+				$("ul li").eq(idx).nextAll("li").css("background-color","transparent");
+				
+			}).on("click",function() {
+				// 鼠标点击记录序号,以便离开后设置样式
+				idx = $(this).index();
+				console.log(idx);
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<h1>五星评分：</h1>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* .box .container .img{} */
+.box{
+	width: 100%;
+	background-color: black;
+	padding: 10px;
+}
+.box .container{
+	width: 1200px;
+	margin: 100px auto;
+}
+.box .container .imgs ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+.box .container .imgs ul li{
+	width: 300px;
+	padding:10px;
+	height: 300px;
+	overflow: hidden;
+	border: 1px solid rgba(255,0,0,.6);
+	background-color: pink;
+	opacity: 1;
+}
+.box .container .imgs ul li img{
+	width: 100%;
+}

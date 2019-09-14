@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>jQuery淘宝精品服饰</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/goods.css">
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			
+			var idx;
+			$(".left li").mouseenter(function() {
+				
+				idx = $(this).index();
+				// 鼠标滑过当前li是当前背景改变,并隐藏其他同辈
+				// li的背景
+				$(this).css("background-color","darkcyan").siblings("li").css("background-color","transparent");
+				
+				$(".center li").eq(idx).css("display","block").siblings("li").css("display","none");
+			
+			});
+			
+			$(".right li").mouseenter(function() {
+				
+				console.log($(".right li"));
+				idx = $(this).index() + 9;
+				// 鼠标滑过当前li是当前背景改变,并隐藏其他同辈
+				// li的背景
+				$(this).css("background-color","darkcyan").siblings("li").css("background-color","transparent");
+				
+				$(".center li").eq(idx).css("display","block").siblings("li").css("display","none");
+				
+			});
+			
+			$(".tab>ul ul").mouseleave(function() {
+				$(this).children("li").css("background-color","transparent");
+			});
+			
+			
+		});
+		
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="container">
+			<div class="tab">
+				<ul>
+					<li>
+						<ul class="left">
+							<li><a href="">图片1</a></li>
+							<li><a href="">图片2</a></li>
+							<li><a href="">图片3</a></li>
+							<li><a href="">图片4</a></li>
+							<li><a href="">图片5</a></li>
+							<li><a href="">图片6</a></li>
+							<li><a href="">图片7</a></li>
+							<li><a href="">图片8</a></li>
+							<li><a href="">图片9</a></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="center">
+							<li><img src="img/000934-1558368574dd18.jpg" alt=""></li>
+							<li><img src="img/094739-1534297659dab6.jpg" alt=""></li>
+							<li><img src="img/095255-1557453175f343.jpg" alt=""></li>
+							<li><img src="img/163722-15591190426f4c.jpg" alt=""></li>
+							<li><img src="img/183211-1551349931c468.jpg" alt=""></li>
+							<li><img src="img/190555-1514286355fe70.jpg" alt=""></li>
+							<li><img src="img/202819-155006089915cb.jpg" alt=""></li>
+							<li><img src="img/203726-156051584670ea.jpg" alt=""></li>
+							<li><img src="img/205144-15565423043ef9.jpg" alt=""></li>
+							<li><img src="img/205300-1552827180f109.jpg" alt=""></li>
+							<li><img src="img/205831-1560517111a4c4.jpg" alt=""></li>
+							<li><img src="img/213053-15231942538387.jpg" alt=""></li>
+							<li><img src="img/213731-15568042516762.jpg" alt=""></li>
+							<li><img src="img/220648-15581020083ec0.jpg" alt=""></li>
+							<li><img src="img/222527-155507912785fc.jpg" alt=""></li>
+							<li><img src="img/231903-156095754382e2.jpg" alt=""></li>
+							<li><img src="img/233447-15155120878e8a.jpg" alt=""></li>
+							<li><img src="img/草帽.jpg" alt=""></li>
+						</ul>
+					</li>
+					<li>
+						<ul class="right">
+							<li><a href="">图片10</a></li>
+							<li><a href="">图片11</a></li>
+							<li><a href="">图片12</a></li>
+							<li><a href="">图片13</a></li>
+							<li><a href="">图片14</a></li>
+							<li><a href="">图片15</a></li>
+							<li><a href="">图片16</a></li>
+							<li><a href="">图片17</a></li>
+							<li><a href="">图片18</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

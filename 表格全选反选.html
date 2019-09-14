@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>全选与反选</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		.box{
+			width: 100%;
+		}
+		.box .container{
+			width: 1200px;
+			margin: 100px auto;
+			display: flex;
+			justify-content: center;
+		}
+		.box .container #table{
+			text-align: center;
+			width: 300px;
+		}
+		.box .container #table th,
+		.box .container #table td{
+			line-height: 2em;
+		}
+		.box .container #table thead{
+			background-color: rgba(0,0,255,.6);
+		}
+		.box .container #table tbody{
+			background-color: rgba(255,0,0,.6);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="container">
+			<table id="table">
+				<thead>
+					<tr>
+						<th>
+							<input type="checkbox">
+						</th>
+						<th>姓名：</th>
+						<th>班级：</th>
+						<th>学号：</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			
+			var data = [
+				{name:"小明",classid:"1班",id:6001},
+				{name:"小黑",classid:"2班",id:6003},
+				{name:"小花",classid:"4班",id:6002},
+				{name:"小明",classid:"1班",id:6001},
+				{name:"小黑",classid:"2班",id:6003},
+				{name:"小花",classid:"4班",id:6002}
+			];
+			
+			for(var i = 0; i < data.length; i++) {
+				var $cLi = $("<tr><th><input type='checkbox'></th><td>"+data[i]["name"]+"</td><td>"+data[i]["classid"]+"</td><td>"+data[i]["id"]+"</td></tr>")
+				$("#table tbody").append($cLi);
+			}
+			
+			// 全选
+			$("#table>thead input").click(function() {
+				// 获取全选按钮的checked属性值
+				var $check = $(this).prop("checked");
+				// 设置所有子元素选中与否
+				$("#table>tbody input").prop("checked",$check);
+			});
+			
+			
+			$("#table>tbody input").click(function() {
+				
+				var $totalLength = $("#table>tbody input").length;
+				var $checkLength = $("#table>tbody input:checked").length;
+				
+				// 如果选项个数等于已经选择的个数,
+				// 设置全选按钮为选中状态
+				$("#table>thead input").prop("checked",$totalLength == $checkLength);
+				
+			});
+		});
+		
+	</script>
+</body>
+</html>

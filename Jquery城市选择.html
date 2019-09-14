@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>城市选择案例</title>
+	<link rel="stylesheet" href="css/mui.min.css">
+	<link rel="stylesheet" href="css/city.css">
+</head>
+<body>
+	<div class="box">
+		<div class="container">
+			<select id="selLeft" multiple="multiple">
+				<option value="">city1</option>
+				<option value="">city2</option>
+				<option value="">city3</option>
+				<option value="">city4</option>
+				<option value="">city5</option>
+			</select>
+			<div class="btn">
+				<button type="button" id="all-right" class="mui-btn mui-btn-blue">&gt;&gt;</button>
+				<button type="button" id="all-left" class="mui-btn mui-btn-blue">&lt;&lt;</button>
+				<button type="button" id="right" class="mui-btn mui-btn-blue">&gt;</button>
+				<button type="button" id="left" class="mui-btn mui-btn-blue">&lt;</button>
+			</div>
+			<select id="selRight" multiple="multiple"></select>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			
+			// 全部复制
+			$("#all-right").click(function() {
+				$("#selLeft option").appendTo($("#selRight"));
+			});
+			$("#all-left").click(function() {
+				$("#selRight option").appendTo($("#selLeft"));
+			});
+			$("#right").click(function() {
+				$("#selLeft option:selected").appendTo($("#selRight"));
+			});
+			$("#left").click(function() {
+				$("#selRight option:selected").appendTo($("#selLeft"));
+			});
+			
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>图片相册</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		.box{
+			width: 100%;
+		}
+		.box .container{
+			width: 1200px;
+			margin:  100px auto;
+		}
+		.box .container ul{
+			display: flex;
+			height: 66px;
+			overflow: hidden;
+		}
+		.box .container ul li{
+			margin-right: 13px;
+		}
+		.box .container ul li img{
+			width: 120px;
+		}
+		
+		#largeImg{
+			width: 520px;
+			height: 300px;
+			overflow: hidden;
+		}
+		#largeImg img{
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="container">
+			<div>
+				<h1 style="font-weight: normal;color: pink;line-height: 2em;">图片廊</h1>
+			</div>
+			<ul id="smallImgs">
+				<li><a href="img/144155-15583345154225.jpg" title="百合姬"><img src="img/144155-15583345154225.jpg" alt=""></a></li>
+				<li><a href="img/195929-1558180769d5fd.jpg" title="女生"><img src="img/195929-1558180769d5fd.jpg" alt=""></a></li>
+				<li><a href="img/220101-15124824618d3d.jpg" title="守望先锋"><img src="img/220101-15124824618d3d.jpg" alt=""></a></li>
+				<li><a href="img/221412-1553350452ddd5.jpg" title="仙女"><img src="img/221412-1553350452ddd5.jpg" alt=""></a></li>
+			</ul>
+			<div id="largeImg">
+				<img src="img/144155-15583345154225.jpg" alt="">
+			</div>
+			<div id="title">
+				百合姬
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			
+			$("#smallImgs>li").mouseenter(function(){
+				var $src = $(this).children("a").attr("href");
+				var	$title = $(this).children("a").attr("title");
+				$("#largeImg img").attr("src",$src);
+				$("#title").text($title);
+			});
+			$("#smallImgs>li>a").click(function() {
+				return false;
+			});
+			
+		});
+	</script>
+</body>
+</html>

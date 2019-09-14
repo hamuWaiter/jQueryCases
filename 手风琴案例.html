@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>jQuery手风琴案例</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/piano.css">
+</head>
+<body>
+	<div class="box">
+		<div class="container">
+			<ul>
+				<li class="item">
+					<p>标题一</p>
+					<div>标题一的内容</div>
+				</li>
+				<li class="item">
+					<p>标题二</p>
+					<div>标题二的内容</div>
+				</li>
+				<li class="item">
+					<p>标题三</p>
+					<div>标题三的内容</div>
+				</li>
+				<li class="item">
+					<p>标题四</p>
+					<div>标题四的内容</div>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			
+			$(".container .item").click(function() {
+				
+				
+				// 链式编程:
+				// $(this).children("div")表示当前被操作样式的元素,.css()方法返回该jQuery对象,
+				// 实际上,每一个jQuery方法都会返回调用该方法的jQuery对象本身,
+				// 通过返回的jQuery对象可以继续下一步操作.所以就叫做练市编程
+				
+				$(this).children("div").show().parent().siblings("li").children("div").hide();
+				
+			});
+		});
+	</script>
+</body>
+</html>

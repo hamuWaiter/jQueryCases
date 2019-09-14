@@ -1,0 +1,13 @@
+.box .container{
+	display: flex;
+}
+.box .container button{
+	display: block;
+	margin: 10px;
+	width: 40px;
+}
+#selLeft,#selRight{
+	width: 200px;
+	height: 300px;
+	background-color: rgba(0,255,0,.4);
+}

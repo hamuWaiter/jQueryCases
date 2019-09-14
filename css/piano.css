@@ -1,0 +1,24 @@
+.box{
+	width: 100%;
+}
+.box .container{
+	width: 1200px;
+	margin: 100px auto;
+}
+.box .container ul .item{
+	line-height: 2em;
+	width: 100px;
+}
+.box .container ul .item p{
+	background-color: #008B8B;
+	color: white;
+	border-bottom: 1px solid red;
+}
+.box .container ul .item:last-child p{
+	border: none;
+}
+.box .container ul .item div{
+	border: 1px solid red;
+	height: 200px;
+	display: none;
+}

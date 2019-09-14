@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>鼠标移入图片高亮</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/img.css">
+</head>
+<body>
+	<div class="box">
+		<div class="container">
+			<div class="imgs">
+				<ul>
+					<li><img src="img/203726-156051584670ea.jpg" alt=""></li>
+					<li><img src="img/205144-15565423043ef9.jpg" alt=""></li>
+					<li><img src="img/205300-1552827180f109.jpg" alt=""></li>
+					<li><img src="img/205831-1560517111a4c4.jpg" alt=""></li>
+					<li><img src="img/213053-15231942538387.jpg" alt=""></li>
+					<li><img src="img/213731-15568042516762.jpg" alt=""></li>
+					<li><img src="img/222527-155507912785fc.jpg" alt=""></li>
+					<li><img src="img/220648-15581020083ec0.jpg" alt=""></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			
+			$(".imgs li").mouseenter(function() {
+				
+				$(this).css("opacity",1).siblings("li").css("opacity",0.4);
+				
+			});
+			$(".imgs").mouseleave(function() {
+				$(".imgs li").css("opacity",1);
+			});
+			
+			
+		});
+	</script>
+</body>
+</html>

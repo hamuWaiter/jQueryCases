@@ -1,0 +1,40 @@
+.box{
+	width: 100%;
+}
+.box .container{
+	width: 1200px;
+	margin: 100px auto;
+}
+.box .container .tab>ul{
+	display: flex;
+	justify-content: center;
+}
+.box .container .tab ul .left li,
+.box .container .tab ul .right li{
+	padding: 0 10px;
+	line-height: 58px;
+	border: 1px solid darkcyan;
+}
+
+.box .container .tab ul .center{
+	
+	position: relative;
+	width: 400px;
+}
+.box .container .tab ul .center li{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 538px;
+	overflow: hidden;
+	display: none;
+
+}
+.box .container .tab ul .center li:first-child{
+	display: block;
+}
+.box .container .tab ul .center li img{
+	display: block;
+	width: 100%;
+}

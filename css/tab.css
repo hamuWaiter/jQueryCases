@@ -1,0 +1,62 @@
+.box{
+	width: 100%;
+}
+.box .container{
+	width: 1200px;
+	margin: 100px auto;
+}
+.box .container .tab{
+	display: flex;
+}
+.box .container .tab .item{
+	padding: 10px 0;
+
+}
+.box .container .tab .item.on{
+	border-top: 2px solid red;
+}
+.box .container .tab .item a{
+	padding: 0 10px;
+	border-right: 1px solid red;
+}
+.box .container .tab .item:last-child a{
+	border: none;
+}
+.box .container .tab-body{
+	position: relative;
+}
+.box .container .tab-body .item{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.box .container .tab-body .item:first-child{
+	display: block;
+}
+.box .container .tab-body .item ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+.box .container .tab-body .item ul li{
+	width: 260px;
+	height: 350px;
+	margin: 10px;
+	background-color: #008B8B;
+	overflow: hidden;
+	position: relative;
+}
+.box .container .tab-body .item ul li img{
+	width: 100%;
+	display: block;
+}
+.box .container .tab-body .item ul li p{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	line-height: 4em;
+	color: white;
+	background-color: rgba(0,0,0,.4);;
+}

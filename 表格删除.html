@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>表格删除案例</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/mui.min.css">
+	<style>
+		.box{
+			width: 100%;
+		}
+		.box .container{
+			width: 1200px;
+			margin: 50px auto;
+		}
+		.box .container table{
+			width: 600px;
+			text-align: left;
+			/* background-color: rgba(0,255,0,.4); */
+		}
+		.box .container table tr{
+			line-height: 3em;
+			background-color: rgba(0,255,0,.4);
+
+		}
+	</style>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(function() {
+			var data = [
+				{name:"小明",classid:"1班",id:6001},
+				{name:"小黑",classid:"2班",id:6003},
+				{name:"小花",classid:"4班",id:6002}
+			];
+			
+			
+			// 渲染表格
+			for(var i = 0; i < data.length; i++) {
+				
+				var $newTr = $("<tr><td>"+data[i]["name"]+"</td><td>"+data[i]["classid"]+"</td><td>"+data[i]["id"]+"</td><td><a href='javascript:void(0);'>删除</a></td></tr>");
+				$("#table").append($newTr);
+				
+			}
+			$("#clear").click(function() {
+				
+				$("#table tr").remove();
+				
+			});
+			$("#table a").click(function() {
+				$(this).parent().parent().remove();
+			});
+			
+		});
+	</script>
+</head>
+<body>
+	<div class="box">
+		<div class="container">
+			<button type="button" id="clear" class="mui-btn mui-btn-blue">清空表格</button>
+			<table id="table">
+				<caption>学生信息表</caption>
+				<tr>
+					<th>姓名：</th>
+					<th>班级：</th>
+					<th>学号：</th>
+					<th>删除：</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
