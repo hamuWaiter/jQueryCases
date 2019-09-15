@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			ul li {
+				list-style: none;
+			}
+
+			body {
+				user-select: none;
+			}
+
+			.top {
+				width: 100%;
+			}
+
+			.container {
+				width: 100%;
+				max-width: 1600px;
+				margin: 0 auto;
+			}
+
+			.top .container {
+				height: 800px;
+				background: url(img/蒲公英.jpg) repeat center center;
+				background-size: cover;
+			}
+
+			ul {
+				width: 100%;
+				background: linear-gradient(rgba(0, 0, 0, .6), transparent);
+				display: flex;
+				justify-content: flex-end;
+				padding-right: 100px;
+			}
+
+			ul li {
+				color: white;
+				margin-left: 40px;
+				line-height: 50px;
+				padding: 4px 10px;
+				transition: transform .5s;
+			}
+
+			ul li:hover {
+				color: red;
+				transform: scale(1.5) translate3d(0, 0, 0);
+			}
+
+			.text{
+				opacity: 0;
+				padding-top: 40px;
+				display: flex;
+				transform: translateY(100px);
+				transition: transform 1s,opacity 4s;
+			}
+			.text .left-text{
+				flex: 6;
+			}
+			.text .right-text{
+				flex: 4;
+			}
+			.text h1{
+				line-height: 2em;
+			}
+			.text p{
+				text-indent: 2em;
+			}
+		</style>
+		<script src="js/jquery-3.4.1.js"></script>
+		<script>
+			$(function() {
+				
+				var $screenHeight = $(window).height();// 顶部图片的高度
+				var $txt = $("#content .text");//获取所有文本
+				var $top;
+				var $txtTop;  //表示页面中的每一个文本距离文档顶端的距离
+				$(window).on("scroll",function() {  //添加滚动时间
+					
+					
+					$top = $(this).scrollTop() + $screenHeight;  //获取页面被卷曲的高度(包含屏幕高度)
+					// 循环遍历每一个文本
+					$txt.each( function(index,element) {  //遍历每一个文本
+						
+						$txtTop = $(element).offset().top;  //获取每一个文本距离页面顶端的距离
+						
+						if( $top > $txtTop) {  //判断文本是否出现在屏幕内
+						
+							$(this).css({  //设置样式
+								opacity : 1,
+								transform : "translateY(0)"
+							})
+						}
+					})
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div class="box">
+			<div class="top">
+				<div class="container">
+					<nav>
+						<ul>
+							<li>导航一</li>
+							<li>导航二</li>
+							<li>导航三</li>
+							<li>导航四</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			
+			<div class="content" id="content">
+				<div class="container">
+					<div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div>
+					<div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div>
+					<div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div>
+					<div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div>
+					<div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div>
+					<div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div><div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div>
+					<div class="text">
+						<div class="left-text">
+							<h1>左标题</h1>
+							<p>手中雕刻生花  刀锋千转蜿蜒成画  盛名功德塔   是桥畔某处人家春风绕过发梢红纱</p>
+						</div>
+						<div class="right-text">
+							<div class="left-text">
+								<h1>右标题</h1>
+								<p>刺绣赠他  眉目刚烈拟作妆嫁 轰烈流沙枕上白发</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
